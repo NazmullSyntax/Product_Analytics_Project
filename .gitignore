@@ -1,7 +1,22 @@
+# Environment variables (DATABASE PASSWORDS)
+.env
+.env.*
+!.env.example
+
+# Python
 venv/
 __pycache__/
-.env
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (too large for GitHub)
 data/raw/*.csv
 data/processed/*.csv
-.ipynb_checkpoints/
+
+# OS
 .DS_Store
+Thumbs.db
+# VS Code settings
+.vscode/
