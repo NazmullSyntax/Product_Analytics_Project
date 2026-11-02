@@ -9,10 +9,12 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 def test_database_connection():
     """Test that we can connect to the Neon database."""
     from src.config import get_engine
+    from sqlalchemy import text
+    
     engine = get_engine()
     assert engine is not None
     with engine.connect() as conn:
-        result = conn.execute("SELECT 1").scalar()
+        result = conn.execute(text("SELECT 1")).scalar()
         assert result == 1
 
 def test_data_loaded():
